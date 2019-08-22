@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     var currentCamera: AVCaptureDevice?
     var photoOutput: AVCapturePhotoOutput?
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var image: UIImage?
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupCaptureSession()
@@ -28,38 +30,63 @@ class ViewController: UIViewController {
         startRunningCaptureSession()
     }
 
-    @IBAction func cameraButton_TouchUpInside(_ sender: UIButton) {
-        performSegue(withIdentifier: "showPhotoSegu", sender: nil)
+    @IBAction func cameraButton_TouchUpInside(_ sender: UIButton)
+    {
+        //performSegue(withIdentifier: "showPhotoSegu", sender: nil)
+        let settings = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: settings, delegate: self as! AVCapturePhotoCaptureDelegate)
     }
     
-    func setupCaptureSession() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "showPhotoSegue"
+        {
+            let previewVC = segue.destination as! PreviewViewController
+            previewVC.image = self.image
+        }
+    }
+    
+    func setupCaptureSession()
+    {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
     }
     
-    func setupDevice()  {
+    func setupDevice()
+    {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
         let devices = deviceDiscoverySession.devices
-        for device in devices {
-            if device.position == AVCaptureDevice.Position.back {
+        for device in devices
+        {
+            if device.position == AVCaptureDevice.Position.back
+            {
                backCamera = device
-            } else if device.position == AVCaptureDevice.Position.front {
+            }
+            else if device.position == AVCaptureDevice.Position.front
+            {
                 frontCamera = device
             }
         }
         currentCamera = backCamera
     }
     
-    func setupInputOutput() {
-        do {
+    func setupInputOutput()
+    {
+        do
+        {
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!)
             captureSession.addInput(captureDeviceInput)
+            photoOutput = AVCapturePhotoOutput()
             photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
-        } catch {
+            captureSession.addOutput(photoOutput!)
+        }
+        catch
+        {
             print(error)
         }
     }
     
-    func setupPreviewLayer() {
+    func setupPreviewLayer()
+    {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
@@ -67,9 +94,26 @@ class ViewController: UIViewController {
         self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
     }
     
-    func startRunningCaptureSession() {
+    func startRunningCaptureSession()
+    {
         captureSession.startRunning()
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
     }
     
 }
 
+extension ViewController: AVCapturePhotoCaptureDelegate
+{
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?)
+    {
+        if let imageData = photo.fileDataRepresentation()
+        {
+            image = UIImage(data: imageData)
+            performSegue(withIdentifier: "showPhotoSegue", sender: nil)
+        }
+    }
+}
