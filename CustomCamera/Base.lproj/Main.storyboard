@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="id4-tg-hyd">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,91 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Form View Controller-->
+        <scene sceneID="R5Q-Mg-tfe">
+            <objects>
+                <viewController id="id4-tg-hyd" customClass="FormViewController" customModule="CustomCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="we3-lb-7RA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhQ-zw-WfA">
+                                <rect key="frame" x="142" y="120" width="130" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="wfW-oy-ib0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="63"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="NWN-3f-loc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tambah foto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGl-yr-dCZ">
+                                <rect key="frame" x="103" y="269" width="203" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lokasi" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-1x-re3">
+                                <rect key="frame" x="16" y="425" width="374" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Judul Laporan" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bri-Ze-ev4">
+                                <rect key="frame" x="16" y="494" width="374" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foto akan membuat laporan anda menjadi lebih spesifik" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQC-g6-YxL">
+                                <rect key="frame" x="43" y="328" width="324" height="45.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deskripsi" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="802-LY-y1m">
+                                <rect key="frame" x="16" y="558" width="374" height="229"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XhQ-zw-WfA" firstAttribute="leading" secondItem="QMJ-q0-8YF" secondAttribute="leading" constant="142" id="1aL-cN-Kzp"/>
+                            <constraint firstItem="lGl-yr-dCZ" firstAttribute="leading" secondItem="QMJ-q0-8YF" secondAttribute="leading" constant="103" id="63F-Ym-Kc8"/>
+                            <constraint firstItem="XhQ-zw-WfA" firstAttribute="top" secondItem="QMJ-q0-8YF" secondAttribute="top" constant="76" id="CO4-ME-Ajs"/>
+                            <constraint firstItem="QMJ-q0-8YF" firstAttribute="trailing" secondItem="lGl-yr-dCZ" secondAttribute="trailing" constant="108" id="Hn5-dN-90H"/>
+                            <constraint firstItem="lGl-yr-dCZ" firstAttribute="top" secondItem="XhQ-zw-WfA" secondAttribute="bottom" constant="19" id="UJE-3u-3JU"/>
+                            <constraint firstItem="nQC-g6-YxL" firstAttribute="top" secondItem="lGl-yr-dCZ" secondAttribute="bottom" constant="36" id="VVj-jv-tcJ"/>
+                            <constraint firstItem="nQC-g6-YxL" firstAttribute="leading" secondItem="QMJ-q0-8YF" secondAttribute="leading" constant="43" id="efe-6p-YEu"/>
+                            <constraint firstItem="QMJ-q0-8YF" firstAttribute="trailing" secondItem="XhQ-zw-WfA" secondAttribute="trailing" constant="142" id="uJ0-Dk-7vb"/>
+                            <constraint firstItem="QMJ-q0-8YF" firstAttribute="trailing" secondItem="nQC-g6-YxL" secondAttribute="trailing" constant="47" id="wng-HV-NL0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QMJ-q0-8YF"/>
+                    </view>
+                    <connections>
+                        <outlet property="addPhotoOut" destination="lGl-yr-dCZ" id="BQr-cx-jC2"/>
+                        <outlet property="descAddPhotoOut" destination="nQC-g6-YxL" id="MYG-NK-0Tb"/>
+                        <outlet property="descriptionOut" destination="802-LY-y1m" id="f2v-mB-yyV"/>
+                        <outlet property="judulOut" destination="bri-Ze-ev4" id="Jtz-a3-Vyd"/>
+                        <outlet property="locationOut" destination="wl1-1x-re3" id="gok-dT-N9s"/>
+                        <outlet property="photoButtonOut" destination="XhQ-zw-WfA" id="UQH-mI-weL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSk-T9-O5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1001.4492753623189" y="501.5625"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -86,6 +171,7 @@
                                         <state key="normal" title="Simpan"/>
                                         <connections>
                                             <action selector="saveButton_TouchUpInside:" destination="AqR-Iu-da7" eventType="touchUpInside" id="I7K-4d-tCp"/>
+                                            <segue destination="id4-tg-hyd" kind="presentation" identifier="setPhoto" id="Edv-iA-efz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ff-CO-Lzq">
@@ -131,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZW-Pm-EXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.17391304347836" y="126.5625"/>
+            <point key="canvasLocation" x="1055" y="502"/>
         </scene>
     </scenes>
 </document>

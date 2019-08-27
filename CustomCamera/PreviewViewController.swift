@@ -13,6 +13,7 @@ class PreviewViewController: UIViewController
 {
     @IBOutlet weak var uiImageOut: UIImageView!
     var image: UIImage!
+    let finalImageURL: URL? = nil
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -27,9 +28,22 @@ class PreviewViewController: UIViewController
     
     @IBAction func saveButton_TouchUpInside(_ sender: UIButton)
     {
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        dismiss(animated: true, completion: nil)
+//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        //dismiss(animated: true, completion: nil)
+        let imageFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        var imageURL = imageFolder?.appendingPathComponent("\(UUID()).jpg")
+        let jpegDatam = image.jpegData(compressionQuality: 0.5)
+        imageURL = finalImageURL
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "setPhoto" {
+            let formView = segue.destination as! FormViewController
+            formView.urlImage = self.finalImageURL
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 

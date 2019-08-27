@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FB6A01D230FD4C900A604EA /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB6A01C230FD4C900A604EA /* FormViewController.swift */; };
 		8879A905230D565A00B55C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8879A904230D565A00B55C6C /* AppDelegate.swift */; };
 		8879A907230D565A00B55C6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8879A906230D565A00B55C6C /* ViewController.swift */; };
 		8879A90A230D565A00B55C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8879A908230D565A00B55C6C /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FB6A01C230FD4C900A604EA /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		8879A901230D565A00B55C6C /* CustomCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8879A904230D565A00B55C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8879A906230D565A00B55C6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				8879A904230D565A00B55C6C /* AppDelegate.swift */,
 				8879A906230D565A00B55C6C /* ViewController.swift */,
 				8879A916230D587400B55C6C /* PreviewViewController.swift */,
+				5FB6A01C230FD4C900A604EA /* FormViewController.swift */,
 				8879A908230D565A00B55C6C /* Main.storyboard */,
 				8879A90B230D565B00B55C6C /* Assets.xcassets */,
 				8879A90D230D565B00B55C6C /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				8879A907230D565A00B55C6C /* ViewController.swift in Sources */,
 				8879A905230D565A00B55C6C /* AppDelegate.swift in Sources */,
+				5FB6A01D230FD4C900A604EA /* FormViewController.swift in Sources */,
 				8879A917230D587400B55C6C /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
